@@ -21,3 +21,16 @@ provided by the bot. You will only need to do this once across all repos using o
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+
+# INSTRUCTIONS
+
+https://learn.microsoft.com/en-us/azure/app-service/tutorial-custom-container?tabs=azure-portal&pivots=container-linux
+
+docker build --tag jeremyvosstest.azurecr.io/custom_container/django:0.1-sample .
+docker run -it -p 8000:8000 jeremyvosstest.azurecr.io/custom_container/django:0.1-sample
+docker push  jeremyvosstest.azurecr.io/custom_container/django:0.1-sample
+
+set WEBSITES_PORT
+
+Designed for python 3.6 (breaks 3.10)
+Designed for old django

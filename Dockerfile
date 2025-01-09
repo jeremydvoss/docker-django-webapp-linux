@@ -13,7 +13,8 @@ RUN apt-get update \
         && apt-get install -y --no-install-recommends dialog \
         && apt-get update \
 	&& apt-get install -y --no-install-recommends openssh-server \
-	&& echo "$SSH_PASSWD" | chpasswd 
+	&& echo "$SSH_PASSWD" | chpasswd \
+        && python manage.py migrate
 
 COPY sshd_config /etc/ssh/
 COPY init.sh /usr/local/bin/
